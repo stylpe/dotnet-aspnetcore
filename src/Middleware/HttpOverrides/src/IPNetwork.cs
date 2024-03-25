@@ -10,6 +10,7 @@ namespace Microsoft.AspNetCore.HttpOverrides;
 /// <summary>
 /// A representation of an IP network based on CIDR notation.
 /// </summary>
+[Obsolete("Use 'System.Net.IPNetwork' instead.")]
 public class IPNetwork
 {
     /// <summary>
