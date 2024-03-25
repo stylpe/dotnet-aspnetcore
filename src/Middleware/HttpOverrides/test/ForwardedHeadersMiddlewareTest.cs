@@ -1019,7 +1019,9 @@ public class ForwardedHeadersMiddlewareTests
             var knownNetworkParts = knownNetwork.Split('/');
             var networkIp = IPAddress.Parse(knownNetworkParts[0]);
             var prefixLength = int.Parse(knownNetworkParts[1], CultureInfo.InvariantCulture);
+#pragma warning disable CS0618 // Obsolete
             options.KnownNetworks.Add(new IPNetwork(networkIp, prefixLength));
+#pragma warning restore CS0618 // Obsolete
         }
 
         using var host = new HostBuilder()

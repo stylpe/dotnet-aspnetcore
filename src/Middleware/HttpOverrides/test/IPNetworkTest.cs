@@ -4,6 +4,8 @@ using System.Net;
 
 namespace Microsoft.AspNetCore.HttpOverrides;
 
+#pragma warning disable CS0618 // Obsolete
+
 public class IPNetworkTest
 {
     [Theory]
@@ -195,3 +197,5 @@ public class IPNetworkTest
         "2001:db8:3c4d::/129"
     };
 }
+
+#pragma warning restore CS0618 // Obsolete
