@@ -75,6 +75,17 @@ public class IPNetwork
         return true;
     }
 
+    /// <summary>
+    /// Converts an <see cref="IPAddress"/> value to the new
+    /// <see cref="System.Net.IPNetwork"/> type that was
+    /// introduced in .NET 8.
+    /// </summary>
+    /// <param name="network">The value to convert</param>
+    public static implicit operator System.Net.IPNetwork(IPNetwork network)
+    {
+        return new System.Net.IPNetwork(network.Prefix, network.PrefixLength);
+    }
+
     private byte[] CreateMask()
     {
         var mask = new byte[PrefixBytes.Length];
